@@ -12,9 +12,8 @@ logger = logging.getLogger("rfcdl")
 
 
 class RfcDownloader():
-    URL_INDEX = "https://www.ietf.org/download/rfc-index.txt"
+    URL_INDEX = "https://www.rfc-editor.org/rfc-index.txt"
     URL_RFC = "https://www.rfc-editor.org/rfc/rfc{number}.txt"
-    # URL_RFC = "https://tools.ietf.org/rfc/rfc{number}.txt"
     PAT_DOCUMENT = (r"\n(\d{4}) (?!Not Issued).*?\(Format:(.*?)\)"
                     r".*?\(Status:([A-Z \n]+)\).*?\(DOI:(.*?)\)")
 
