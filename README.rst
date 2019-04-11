@@ -37,6 +37,7 @@ Configuration
 
 A configuration file can be saved to ``~/.config/rfcdl/config.ini`` to avoid specifying the path for each invocation.
 Of course, ``$XDG_CONFIG_HOME`` can be set to change your configuration path.
+Alternatively, the path to the configuration file can be set via the ``--config-file`` argument.
 ::
 
     [GENERAL]

@@ -16,6 +16,8 @@ def parse_arguments():
                         help="Print debug information.")
     parser.add_argument("-q", "--quiet", action="store_true",
                         help="Print errors and warnings only.")
+    parser.add_argument("-c", "--config-file", type=str,
+                        help="File to read configuration from.")
     parser.add_argument("-d", "--directory", type=str,
                         help="Directory to store documents in.")
     parser.add_argument("-n", "--samples", type=int, default=0,

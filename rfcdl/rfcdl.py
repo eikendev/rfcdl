@@ -2,7 +2,7 @@ import logging
 import sys
 
 from .arguments import parse_arguments
-from .config import load_config, get_config_path, get_root_dir
+from .config import load_config, get_default_config_file, get_root_dir
 from .downloader import RfcDownloader
 from .exception import RfcDLArgumentException, RfcDLConfigurationException
 
@@ -25,9 +25,6 @@ def setup_logger(logger):
 def main():
     setup_logger(logger)
 
-    config_path = get_config_path()
-    config = load_config(config_path)
-
     try:
         args = parse_arguments()
     except RfcDLArgumentException as e:
@@ -41,6 +38,13 @@ def main():
         logger.debug(msg)
     elif args.quiet:
         logger.setLevel(logging.WARNING)
+
+    config_file = args.config_file
+
+    if config_file is None:
+        config_file = get_default_config_file()
+
+    config = load_config(config_file)
 
     logger.info("Starting RfcDL.")
 

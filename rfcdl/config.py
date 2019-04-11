@@ -1,7 +1,7 @@
+import configparser
 import logging
 import os
 
-from configparser import ConfigParser
 from pathlib import Path
 
 from .exception import RfcDLConfigurationException
@@ -10,32 +10,35 @@ logger = logging.getLogger("rfcdl")
 
 
 def load_config(path):
-    config = ConfigParser(interpolation=None)
-    config.read(path)
+    msg = "Loading configuration '{}'."
+    logger.debug(msg.format(path))
+
+    config = configparser.ConfigParser(interpolation=None)
+
+    try:
+        config.read(path)
+    except configparser.Error:
+        msg = "Cannot load configuration '{}'."
+        logger.error(msg.format(path))
+        exit(1)
 
     return config
 
 
-def _get_config_base():
-    default = '~/.config'
-    path = os.getenv('XDG_CONFIG_HOME', default)
-    path = Path(path).expanduser().resolve()
+def get_default_config_file():
+    msg = 'Loading default configuration file.'
+    logger.debug(msg)
 
-    if not path.is_dir():
-        msg = 'Could not find configuration file.'
-        logger.error(msg)
-        exit(1)
+    subdirectory = 'rfcdl'
+    filename = 'config.ini'
 
-    return path
+    base = '~/.config'
+    base = os.getenv('XDG_CONFIG_HOME', base)
+    base = Path(base)
+    base = base.expanduser()
+    base = base.resolve()
 
-
-def get_config_path():
-    config_directory = 'rfcdl'
-    config_filename = 'config.ini'
-
-    base = _get_config_base()
-    directory = base / config_directory
-    config = directory / config_filename
+    config = base / subdirectory / filename
 
     return config
 
@@ -46,7 +49,8 @@ def get_root_dir(path):
         raise RfcDLConfigurationException(msg)
 
     path = Path(path)
-    path = path.expanduser().resolve()
+    path = path.expanduser()
+    path = path.resolve()
 
     if not path.exists():
         path.mkdir(parents=True)
