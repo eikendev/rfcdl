@@ -1,25 +1,12 @@
 import logging
-import sys
 
 from .arguments import parse_arguments
 from .config import load_config, get_default_config_file, get_root_dir
 from .downloader import RfcDownloader
 from .exception import RfcDLArgumentException, RfcDLConfigurationException
+from .logging import setup_logger
 
 logger = logging.getLogger("rfcdl")
-
-
-def setup_logger(logger):
-    fmt = '%(asctime)s [%(levelname)s] %(message)s'
-    datefmt = '%Y-%m-%d %H:%M:%S'
-    level = logging.INFO
-
-    formatter = logging.Formatter(fmt=fmt, datefmt=datefmt)
-    sh = logging.StreamHandler(sys.stdout)
-    sh.setFormatter(formatter)
-
-    logger.setLevel(level)
-    logger.addHandler(sh)
 
 
 def main():
