@@ -1,3 +1,18 @@
+Installation
+============
+
+From PyPI
+---------
+::
+
+   pip install rfcdl
+
+From Source
+-----------
+::
+
+   ./setup.py install
+
 Usage
 =====
 
