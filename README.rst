@@ -1,3 +1,18 @@
+.. image:: https://img.shields.io/pypi/status/rfcdl.svg
+   :target: https://pypi.org/project/rfcdl/
+
+.. image:: https://img.shields.io/pypi/l/rfcdl.svg
+   :target: https://pypi.org/project/rfcdl/
+
+.. image:: https://img.shields.io/pypi/pyversions/rfcdl.svg
+   :target: https://pypi.org/project/rfcdl/
+
+.. image:: https://img.shields.io/pypi/v/rfcdl.svg
+   :target: https://pypi.org/project/rfcdl/
+
+.. image:: https://img.shields.io/pypi/dm/rfcdl.svg
+   :target: https://pypi.org/project/rfcdl/
+
 Installation
 ============
 
