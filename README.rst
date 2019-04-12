@@ -13,21 +13,6 @@
 .. image:: https://img.shields.io/pypi/dm/rfcdl.svg
    :target: https://pypi.org/project/rfcdl/
 
-Installation
-============
-
-From PyPI
----------
-::
-
-   pip install rfcdl
-
-From Source
------------
-::
-
-   ./setup.py install
-
 Usage
 =====
 
@@ -61,6 +46,21 @@ This is how you could tell the tool to try to download each file at maximum five
 ::
 
     $ rfcdl -d ~/download/rfc/ --retries 5
+
+Installation
+============
+
+From PyPI
+---------
+::
+
+   pip install rfcdl
+
+From Source
+-----------
+::
+
+   ./setup.py install
 
 Configuration
 =============
