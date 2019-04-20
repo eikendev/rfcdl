@@ -72,3 +72,12 @@ Alternatively, the path to the configuration file can be set via the ``--config-
 
     [GENERAL]
     RootDir = ~/download/rfc/
+
+Development
+===========
+
+The source code is located on `GitHub <https://github.com/eikendev/rfcdl>`_.
+To check out the repository, the following command can be used.
+::
+
+   git clone https://github.com/eikendev/rfcdl.git
