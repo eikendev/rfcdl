@@ -8,18 +8,18 @@ import requests
 from .document import RFCDocument
 from .util import clean_string, fetch_save
 
-logger = logging.getLogger("rfcdl")
+logger = logging.getLogger('rfcdl')
 
 
 class RfcDownloader():
-    URL_INDEX = "https://www.rfc-editor.org/rfc-index.txt"
-    URL_RFC = "https://www.rfc-editor.org/rfc/rfc{number}.txt"
-    PAT_DOCUMENT = (r"\n(\d{4}) (?!Not Issued).*?\(Format:(.*?)\)"
-                    r".*?\(Status:([A-Z \n]+)\).*?\(DOI:(.*?)\)")
+    URL_INDEX = 'https://www.rfc-editor.org/rfc-index.txt'
+    URL_RFC = 'https://www.rfc-editor.org/rfc/rfc{number}.txt'
+    PAT_DOCUMENT = (r'\n(\d{4}) (?!Not Issued).*?\(Format:(.*?)\)'
+                    r'.*?\(Status:([A-Z \n]+)\).*?\(DOI:(.*?)\)')
 
     def __init__(self, path, samples: int, limit: int, retries: int):
         if retries <= 0:
-            raise ValueError("retries must be positive.")
+            raise ValueError('retries must be positive.')
 
         self.path = path
         self.samples = samples
@@ -33,19 +33,19 @@ class RfcDownloader():
         new_docs = {x.number for x in self.documents if not x.is_obsolete}
 
         obsolete_docs = len(self.documents) - len(new_docs)
-        msg = "Filtering out {} obsolete documents."
+        msg = 'Filtering out {} obsolete documents.'
         logger.debug(msg.format(obsolete_docs))
 
         old_docs = {x.stem for x in self.path.iterdir() if x.is_file()}
 
         to_remove = old_docs - new_docs
-        msg = "Detected {} obsolete documents in {}."
+        msg = 'Detected {} obsolete documents in {}.'
         logger.info(msg.format(len(to_remove), self.path))
 
         # Remove old docs not included in new docs.
         if delete_obsolete:
             for fn in to_remove:
-                name = fn + ".txt"
+                name = fn + '.txt'
                 f = self.path / name
                 logger.info("Remove obsolete file: '%s'.", f)
                 f.unlink()
@@ -54,11 +54,11 @@ class RfcDownloader():
         to_add = new_docs - old_docs
 
         if self.samples > 0:
-            msg = "Generating random sample of {} documents."
+            msg = 'Generating random sample of {} documents.'
             logger.debug(msg.format(self.samples))
             to_add = random.sample(to_add, k=self.samples)
 
-        msg = "Downloading {} files."
+        msg = 'Downloading {} files.'
         logger.info(msg.format(len(to_add)))
 
         loop = asyncio.get_event_loop()
@@ -70,7 +70,7 @@ class RfcDownloader():
         def init_task(session, doc):
             doc_int = int(doc)
             url = self.URL_RFC.format(number=doc_int)
-            name = doc + ".txt"
+            name = doc + '.txt'
             f = self.path / name
 
             task = fetch_save(session, url, f, retries=self.retries)
@@ -86,7 +86,7 @@ class RfcDownloader():
 
         dl_successful = results.count(True)
         dl_rate = dl_successful / float(len(results))
-        msg = "total: {}, successful: {}, success rate: {}"
+        msg = 'total: {}, successful: {}, success rate: {}'
         logger.info(msg.format(len(results), dl_successful, dl_rate))
 
     def _fetch_list(self):
@@ -107,13 +107,13 @@ class RfcDownloader():
             doi = clean_string(match.group(4))
 
             match_str = clean_string(match.group(0).lower())
-            is_obsolete = "obsoleted by" in match_str
+            is_obsolete = 'obsoleted by' in match_str
 
             doc = RFCDocument(number, format, status, doi,
                               is_obsolete=is_obsolete)
             documents.add(doc)
 
-        msg = "Parsed {} messages.".format(len(documents))
+        msg = 'Parsed {} messages.'.format(len(documents))
         logger.info(msg)
 
         return documents
