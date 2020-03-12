@@ -6,7 +6,7 @@ from pathlib import Path
 
 from .exception import RfcDLConfigurationException
 
-logger = logging.getLogger("rfcdl")
+logger = logging.getLogger('rfcdl')
 
 
 def load_config(path):

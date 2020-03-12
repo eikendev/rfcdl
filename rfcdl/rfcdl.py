@@ -6,7 +6,7 @@ from .downloader import RfcDownloader
 from .exception import RfcDLArgumentException, RfcDLConfigurationException
 from .logging import setup_logger
 
-logger = logging.getLogger("rfcdl")
+logger = logging.getLogger('rfcdl')
 
 
 def main():
@@ -21,7 +21,7 @@ def main():
 
     if args.debug:
         logger.setLevel(logging.DEBUG)
-        msg = "Application is running in debug mode."
+        msg = 'Application is running in debug mode.'
         logger.debug(msg)
     elif args.quiet:
         logger.setLevel(logging.WARNING)
@@ -33,7 +33,7 @@ def main():
 
     config = load_config(config_file)
 
-    logger.info("Starting RfcDL.")
+    logger.info('Starting RfcDL.')
 
     def load_parameter(required, conf_section, conf_name, arg_name):
         arg = getattr(args, arg_name, None)
@@ -55,7 +55,7 @@ def main():
     try:
         directory = get_root_dir(directory)
     except RfcDLConfigurationException as e:
-        msg = "Initialization not successful: " + str(e)
+        msg = 'Initialization not successful: ' + str(e)
         logger.error(msg)
         exit(1)
 
