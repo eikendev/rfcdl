@@ -1,16 +1,19 @@
-.. image:: https://img.shields.io/pypi/status/rfcdl.svg
+.. image:: https://img.shields.io/travis/eikendev/rfcdl/master
    :target: https://pypi.org/project/rfcdl/
 
-.. image:: https://img.shields.io/pypi/l/rfcdl.svg
+.. image:: https://img.shields.io/pypi/status/rfcdl
    :target: https://pypi.org/project/rfcdl/
 
-.. image:: https://img.shields.io/pypi/pyversions/rfcdl.svg
+.. image:: https://img.shields.io/pypi/l/rfcdl
    :target: https://pypi.org/project/rfcdl/
 
-.. image:: https://img.shields.io/pypi/v/rfcdl.svg
+.. image:: https://img.shields.io/pypi/pyversions/rfcdl
    :target: https://pypi.org/project/rfcdl/
 
-.. image:: https://img.shields.io/pypi/dm/rfcdl.svg
+.. image:: https://img.shields.io/pypi/v/rfcdl
+   :target: https://pypi.org/project/rfcdl/
+
+.. image:: https://img.shields.io/pypi/dm/rfcdl
    :target: https://pypi.org/project/rfcdl/
 
 Usage
