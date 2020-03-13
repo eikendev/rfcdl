@@ -1,19 +1,25 @@
 .. image:: https://img.shields.io/travis/eikendev/rfcdl/master
+   :alt: Build status
    :target: https://travis-ci.org/github/eikendev/rfcdl/builds/
 
 .. image:: https://img.shields.io/pypi/status/rfcdl
+   :alt: Development status
    :target: https://pypi.org/project/rfcdl/
 
 .. image:: https://img.shields.io/pypi/l/rfcdl
+   :alt: License
    :target: https://pypi.org/project/rfcdl/
 
 .. image:: https://img.shields.io/pypi/pyversions/rfcdl
+   :alt: Python version
    :target: https://pypi.org/project/rfcdl/
 
 .. image:: https://img.shields.io/pypi/v/rfcdl
+   :alt: Version
    :target: https://pypi.org/project/rfcdl/
 
 .. image:: https://img.shields.io/pypi/dm/rfcdl
+   :alt: Downloads
    :target: https://pypi.org/project/rfcdl/
 
 Usage
