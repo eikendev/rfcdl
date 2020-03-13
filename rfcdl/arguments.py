@@ -25,8 +25,9 @@ def parse_arguments():
     parser.add_argument('--limit', type=int, default=200,
                         help='Only load this many documents at once.')
     parser.add_argument('--retries', type=int, default=10,
-                        help='How often a document is tried to be received on'
-                        ' failure.')
+                        help='How often a document is tried to be received on failure.')
+    parser.add_argument('--delete-obsolete', action='store_true',
+                        help='Delete obsolete RFCs from the specified directory.')
 
     args = parser.parse_args()
 
