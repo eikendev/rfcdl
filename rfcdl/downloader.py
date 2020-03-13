@@ -86,7 +86,8 @@ class RfcDownloader():
 
         dl_successful = results.count(True)
         dl_rate = dl_successful / float(len(results))
-        msg = 'total: {}, successful: {}, success rate: {}'
+        dl_rate = int(round(dl_rate * 100))
+        msg = 'total: {}, successful: {}, success rate: {}%'
         logger.info(msg.format(len(results), dl_successful, dl_rate))
 
     def _fetch_list(self):
