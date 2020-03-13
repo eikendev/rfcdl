@@ -63,6 +63,8 @@ def main():
         path=directory,
         samples=args.samples,
         limit=args.limit,
-        retries=args.retries
+        retries=args.retries,
     )
-    dl.download()
+    dl.download(
+        delete_obsolete=args.delete_obsolete,
+    )
