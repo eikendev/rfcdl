@@ -1,5 +1,5 @@
 .. image:: https://img.shields.io/travis/eikendev/rfcdl/master
-   :target: https://pypi.org/project/rfcdl/
+   :target: https://travis-ci.org/github/eikendev/rfcdl/builds/
 
 .. image:: https://img.shields.io/pypi/status/rfcdl
    :target: https://pypi.org/project/rfcdl/
