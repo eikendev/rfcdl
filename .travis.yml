@@ -1,0 +1,10 @@
+os: linux
+language: python
+deploy:
+  provider: pypi
+  user: __token__
+  password:
+    secure: Kcm4B6ODCOC9mZRMiIaasKJhQW9BmO/sm8afltLnqjshLo/4n6EL6DxmeE1VkOatTFgXHwm/DNLHznL4UFW4lS5cdEvVBYHD2+M2GxN/+KyVoDl14anD3Odw3aS5H9b1XXBwFU28S+PmOmHvzzHAtAWLbenP4tHGwmVVUi0ugrBF3p2cuLAU7PXVLI3eJAUDEFdiHmWsJQkkgnQl+cKKRDcKZBPa3sZrWxGfTYt/PQD2JHC+NhqhtvSY5jCmxLmBbwbmfdf+jFuRYXbFoDpHbNWs9vY3RhS5Glm77Rx/h2DeShjuBoWO6tG45vF8qXxu1b+5+xxbCGqjSH3hzogxJjY3GvIt2zK7y6HoD5VH3QqvsvmVvZNO3lHA+/BnnGhfnJjsAJdo5C62ZuR5wWdBQQfDWC3staI8ExbUAl7+CWEeAmBgfWVikxP8esNx2oOPucChD6HERjdR/Tpc0hpIza76qDqguqXaTNDFS4PYEq/V4di9yKK7WEfPGt+tF9xRtCAqhQ/f8CTIDkHyyLFf7A9AyT2CQTYkZxu4CFAXHgwuBWFcgIIMHCme+az1rc7T0jp2o4o0kakyIE8Iybn6YMb0OpIqGS6XSzUOlhiB190pTsOkh6o9NEjVSAJu1KBcfyMuZAqMIBWwpeOagK7/QFjEqTs1pSyf1lsOdPLXIbc=
+  on:
+    branch: master
+    tags: true
