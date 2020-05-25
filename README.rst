@@ -83,7 +83,7 @@ Fedora
 .. code:: bash
 
     sudo dnf copr enable eikendev/rfcdl
-    sudo dnf install rfcdl
+    sudo dnf install python3-rfcdl
 
 Configuration
 =============
