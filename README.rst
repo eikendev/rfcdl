@@ -1,6 +1,6 @@
 .. image:: https://img.shields.io/travis/eikendev/rfcdl/master
     :alt: Build status
-    :target: https://travis-ci.org/github/eikendev/rfcdl/builds/
+    :target: https://travis-ci.com/github/eikendev/rfcdl/builds/
 
 .. image:: https://img.shields.io/pypi/status/rfcdl
     :alt: Development status
