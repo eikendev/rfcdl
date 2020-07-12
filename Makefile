@@ -1,12 +1,15 @@
 DIR_SRC=./rfcdl
 DIR_TEST=./test
 
-.PHONY: all
-all: compile
+.PHONY: test
+test: lint
+	python3 -m pytest -vv
 
-.PHONY: compile
-compile:
-	@echo "Nothing to compile."
+.PHONY: lint
+lint:
+	flake8 --ignore=E501 ${DIR_SRC}
+	vulture-3 --exclude version.py ${DIR_SRC}
+	mypy --ignore-missing-imports ${DIR_SRC}
 
 .PHONY: clean
 clean:
@@ -20,10 +23,6 @@ clean:
 run:
 	@python3 -m rfcdl
 
-.PHONY: test
-test:
-	@python3 -m pytest -vv
-
 .PHONY: tags
 tags:
 	ctags -R \
@@ -32,15 +31,3 @@ tags:
 		--languages=Python \
 		--extra=+f \
 		${DIR_SRC}
-
-.PHONY: flake
-flake:
-	@flake8 --ignore=E501 ${DIR_SRC}
-
-.PHONY: vulture
-vulture:
-	@vulture-3 --exclude version.py ${DIR_SRC} && echo 'No dead code found.'
-
-.PHONY: check
-check:
-	@mypy --ignore-missing-imports ${DIR_SRC}

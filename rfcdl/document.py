@@ -11,8 +11,8 @@ class RFCDocument():
         self.is_obsolete = is_obsolete
 
     def __str__(self):
-        s = '<RFC document {}, status={}, is_obsolete={}>'
-        s = s.format(self.number, self.status, str(self.is_obsolete))
+        s = '<RFC document {}, status={}, doi={}, is_obsolete={}>'
+        s = s.format(self.number, self.status, self.doi, str(self.is_obsolete))
         return s
 
     def __repr__(self):
