@@ -11,6 +11,11 @@ lint:
 	${PYTHON} -m vulture --exclude version.py ${DIR_SRC}
 	${PYTHON} -m mypy --ignore-missing-imports ${DIR_SRC}
 
+.PHONY: setup
+setup:
+	pip install -r requirements.txt
+	pip install -r requirements-dev.txt
+
 .PHONY: clean
 clean:
 	find -type d -name '__pycache__' -exec rm -rf {} +;
