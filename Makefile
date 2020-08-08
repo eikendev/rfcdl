@@ -7,9 +7,16 @@ test: lint
 
 .PHONY: lint
 lint:
-	${PYTHON} -m flake8 --ignore=E501 ${DIR_SRC}
-	${PYTHON} -m vulture --exclude version.py ${DIR_SRC}
-	${PYTHON} -m mypy --ignore-missing-imports ${DIR_SRC}
+	${PYTHON} -m flake8 \
+		--ignore=E501 \
+		${DIR_SRC}
+	${PYTHON} -m vulture \
+		--exclude version.py \
+		${DIR_SRC}
+	${PYTHON} -m mypy \
+		--allow-redefinition \
+		--ignore-missing-imports \
+		${DIR_SRC}
 
 .PHONY: setup
 setup:
