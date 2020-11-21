@@ -1,8 +1,8 @@
 name: Main
 on: push
 jobs:
-  publish:
-    name: Publish
+  test_publish:
+    name: Test and publish
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
