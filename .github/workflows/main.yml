@@ -1,7 +1,8 @@
 name: Main
-on: # TODO: This should only trigger on default branch.
-  release:
-    types: [created]
+on:
+  push:
+    tags:
+      - '*'
 jobs:
   publish:
     name: Publish
