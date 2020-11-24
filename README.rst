@@ -26,9 +26,11 @@ Usage
 =====
 
 This tool can be used to download a large number of `RFC documents <https://www.ietf.org/standards/rfcs/>`_ in a short period of time.
-Since I like to keep all RFCs locally on my machine, this is the perfect way to retrieve all the documents and add new ones at a later point in time.
+I used it to keep a local mirror of all RFCs on my machines continuously synchronized.
 
 For a quick introduction, let me show how you would use the tool to get started.
+
+This is how you download the RFCs initially.
 
 .. code:: bash
 
@@ -36,6 +38,18 @@ For a quick introduction, let me show how you would use the tool to get started.
 
 As can be seen above, you have to specify a directory where all RFC documents will be saved in.
 Upon the next invocation of ``rfcdl``, only the RFCs missing in that directory will be downloaded.
+
+This can then be combined with an alias that lets you read the local copy of any RFC.
+The following command opens the RFC 8032 for me in less.
+
+.. code:: bash
+
+    rfc 8032
+
+Check out [my dotfiles](https://github.com/eikendev/dotfiles/blob/199faa40873d8757a7c8f63d82d0f18a83b74ef9/source/zsh/function/rfc.zsh) to see how this is implemented.
+
+Arguments
+=========
 
 If you only want to download a random subset of all RFCs, use the ``--samples`` flag.
 This can be used for testing.
