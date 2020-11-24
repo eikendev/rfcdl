@@ -46,7 +46,7 @@ The following command opens the RFC 8032 for me in less.
 
     rfc 8032
 
-Check out [my dotfiles](https://github.com/eikendev/dotfiles/blob/199faa40873d8757a7c8f63d82d0f18a83b74ef9/source/zsh/function/rfc.zsh) to see how this is implemented.
+Check out `my dotfiles <https://github.com/eikendev/dotfiles/blob/199faa40873d8757a7c8f63d82d0f18a83b74ef9/source/zsh/function/rfc.zsh>`_ to see how this is implemented.
 
 Arguments
 =========
