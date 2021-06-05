@@ -1,3 +1,11 @@
+<div align="center">
+	<h1>rfcdl</h1>
+	<h4 align="center">
+		Always have a copy of your favorite <a href="https://www.ietf.org/standards/rfcs/">RFCs</a> in your pocket.
+	</h4>
+	<p>rfcdl lets you download and synchronize RCFs in high-speed.</p>
+</div>
+
 .. image:: https://img.shields.io/github/workflow/status/eikendev/rfcdl/Main
     :alt: Build status
     :target: https://github.com/eikendev/rfcdl/actions
@@ -21,6 +29,31 @@
 .. image:: https://img.shields.io/pypi/dm/rfcdl
     :alt: Downloads
     :target: https://pypi.org/project/rfcdl/
+
+Installation
+============
+
+From PyPI
+---------
+
+.. code:: bash
+
+    pip install rfcdl
+
+From Source
+-----------
+
+.. code:: bash
+
+    ./setup.py install
+
+Fedora
+------
+
+.. code:: bash
+
+    sudo dnf copr enable eikendev/rfcdl
+    sudo dnf install python3-rfcdl
 
 Usage
 =====
@@ -73,31 +106,6 @@ This is how you could tell the tool to try to download each file at maximum five
 .. code:: bash
 
     rfcdl -d ~/download/rfc/ --retries 5
-
-Installation
-============
-
-From PyPI
----------
-
-.. code:: bash
-
-    pip install rfcdl
-
-From Source
------------
-
-.. code:: bash
-
-    ./setup.py install
-
-Fedora
-------
-
-.. code:: bash
-
-    sudo dnf copr enable eikendev/rfcdl
-    sudo dnf install python3-rfcdl
 
 Configuration
 =============
