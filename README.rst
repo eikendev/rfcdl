@@ -1,10 +1,12 @@
-<div align="center">
-	<h1>rfcdl</h1>
-	<h4 align="center">
-		Always have a copy of your favorite <a href="https://www.ietf.org/standards/rfcs/">RFCs</a> in your pocket.
-	</h4>
-	<p>rfcdl lets you download and synchronize RCFs in high-speed.</p>
-</div>
+=====
+rfcdl
+=====
+
+.. class:: center
+
+**Always have a copy of your favorite `RFCs <https://www.ietf.org/standards/rfcs/>` in your pocket.**
+
+rfcdl lets you download and synchronize RCFs in high-speed.
 
 .. image:: https://img.shields.io/github/workflow/status/eikendev/rfcdl/Main
     :alt: Build status
