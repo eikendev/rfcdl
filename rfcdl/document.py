@@ -2,7 +2,7 @@ import functools
 
 
 @functools.total_ordering
-class RFCDocument():
+class RFCDocument:
     def __init__(self, number, format, status, doi, is_obsolete=False):
         self.number = number
         self.format = format
@@ -11,7 +11,7 @@ class RFCDocument():
         self.is_obsolete = is_obsolete
 
     def __str__(self):
-        s = '<RFC document {}, status={}, doi={}, is_obsolete={}>'
+        s = "<RFC document {}, status={}, doi={}, is_obsolete={}>"
         s = s.format(self.number, self.status, self.doi, str(self.is_obsolete))
         return s
 

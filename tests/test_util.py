@@ -1,4 +1,4 @@
-from rfcdl.util import *
+from rfcdl.util import clean_string
 
 
 def test_clean_string():

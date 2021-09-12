@@ -1,28 +1,25 @@
-PYTHON := python3
+POETRY := poetry
 MODULE_NAME := rfcdl
-DIR_SRC := ./${MODULE_NAME}
+DIR_SRC := ./$(MODULE_NAME)
 
 .PHONY: test
 test: lint
-	${PYTHON} -m pytest -vv
+	$(POETRY) run pytest -vv
 
 .PHONY: lint
 lint:
-	${PYTHON} -m flake8 \
-		--ignore=E501 \
-		${DIR_SRC}
-	${PYTHON} -m vulture \
-		--exclude version.py \
-		${DIR_SRC}
-	${PYTHON} -m mypy \
-		--allow-redefinition \
-		--ignore-missing-imports \
-		${DIR_SRC}
+	$(POETRY) run flake8 .
+	$(POETRY) run mypy
+	$(POETRY) run vulture
+
+.PHONY: format
+format:
+	$(POETRY) run black .
+	$(POETRY) run isort .
 
 .PHONY: setup
 setup:
-	pip install -r requirements.txt
-	pip install -r requirements-dev.txt
+	$(POETRY) install --no-root
 
 .PHONY: clean
 clean:
@@ -30,10 +27,6 @@ clean:
 	find -type d -name '.pytest_cache' -exec rm -rf {} +;
 	find -type d -name '__pycache__' -exec rm -rf {} +;
 	rm -f ./tags
-
-.PHONY: run
-run:
-	${PYTHON} -m ${MODULE_NAME}
 
 .PHONY: tags
 tags:
