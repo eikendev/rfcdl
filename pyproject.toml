@@ -15,7 +15,6 @@ classifiers = [
     "Environment :: Console",
     "Operating System :: POSIX",
 ]
-include = ["LICENSE", "README.md", "config-example.ini"]
 packages = [
     { include = "rfcdl" }
 ]
